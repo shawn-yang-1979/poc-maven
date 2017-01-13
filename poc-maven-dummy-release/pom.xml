@@ -4,7 +4,7 @@
 
 	<groupId>com.shawnyang.poc.maven</groupId>
 	<artifactId>poc-maven-dummy-release</artifactId>
-	<version>0.0.6</version>
+	<version>0.0.7-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>poc-maven-dummy-release</name>
@@ -82,6 +82,6 @@
 
 	<scm>
 		<developerConnection>scm:git:https://github.com/shawn-yang-1979/poc-maven.git</developerConnection>
-		<tag>v0.0.6</tag>
+		<tag>HEAD</tag>
 	</scm>
 </project>
