@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.shawnyang.poc.maven</groupId>
-	<artifactId>poc-maven-dummy</artifactId>
-	<version>0.0.1</version>
+	<artifactId>poc-maven-dummy-release</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>poc-maven-dummy</name>
+	<name>poc-maven-dummy-release</name>
 	<description></description>
 
 	<parent>
@@ -58,4 +58,7 @@
 		</snapshotRepository>
 	</distributionManagement>
 
+	<scm>
+		<developerConnection>scm:git:https://github.com/shawn-yang-1979/poc-maven.git</developerConnection>
+	</scm>
 </project>
