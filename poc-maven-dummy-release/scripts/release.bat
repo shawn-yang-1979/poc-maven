@@ -1,3 +1,3 @@
 cd ..
-call mvn clean release:prepare release:perform
+call mvn release:clean release:prepare release:perform
 cd %~dp0
