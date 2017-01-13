@@ -46,9 +46,12 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
+				<!-- Have to use 2.5.3 otherwise you will get error message like: "can 
+					not find mvn.bat". -->
 				<version>2.5.3</version>
 				<configuration>
 					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<username>shawn-yang-1979</username>
 				</configuration>
 			</plugin>
 		</plugins>
