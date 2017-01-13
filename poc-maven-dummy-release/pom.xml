@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.shawnyang.poc.maven</groupId>
@@ -20,7 +21,20 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.scm.id>github-shawn-yang-1979</project.scm.id>
 		<java.version>1.7</java.version>
+		<!-- Edit your username password in .m2/settings.xml first. Then, you can -->
+		<!-- use this to hide your username password from others. -->
+		<!-- Reference: -->
+		<!-- http://maven.apache.org/maven-release/maven-release-plugin/faq.html#credentials -->
+		<!-- <servers> -->
+		<!-- <server> -->
+		<!-- <id>github-shawn-yang-1979</id> -->
+		<!-- <username>shawn-yang-1979</username> -->
+		<!-- <password>p@$$w0rd</password> -->
+		<!-- </server> -->
+		<!-- </servers> -->
+
 	</properties>
 
 	<dependencies>
