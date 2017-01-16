@@ -11,7 +11,7 @@
 	<parent>
 		<groupId>com.shawnyang.poc.maven</groupId>
 		<artifactId>poc-maven</artifactId>
-		<version>0.1.3</version>
+		<version>0.1.4-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
