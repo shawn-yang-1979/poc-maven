@@ -39,19 +39,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<artifactId>maven-assembly-plugin</artifactId>
-					<configuration>
-						<descriptors>
-							<descriptor>src/assembly/distributions.xml</descriptor>
-						</descriptors>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 	</build>
 
 
@@ -74,6 +61,5 @@
 	<modules>
 		<module>poc-maven-dummy-module-1</module>
 		<module>poc-maven-dummy-module-2</module>
-		<module>poc-maven-distribution</module>
 	</modules>
 </project>
