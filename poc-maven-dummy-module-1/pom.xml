@@ -5,7 +5,7 @@
 	<artifactId>poc-maven-dummy-module-1</artifactId>
 	<packaging>jar</packaging>
 
-	<name>poc-maven-dummy-assembly</name>
+	<name>poc-maven-dummy-module-1</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
