@@ -3,19 +3,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.shawnyang.poc.maven</groupId>
 	<artifactId>poc-maven-dummy-release</artifactId>
-	<version>0.0.8-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>poc-maven-dummy-release</name>
 	<description />
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.3.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<groupId>com.shawnyang.poc.maven</groupId>
+		<artifactId>poc-maven</artifactId>
+		<version>0.0.8-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<properties>
