@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.shawnyang.poc.maven</groupId>
 	<artifactId>poc-maven-dummy-release</artifactId>
-	<version>0.0.7-SNAPSHOT</version>
+	<version>0.0.8-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>poc-maven-dummy-release</name>
@@ -20,20 +21,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<project.scm.id>github-shawn-yang-1979</project.scm.id>
 		<java.version>1.7</java.version>
-		<!-- Edit your username password in .m2/settings.xml first. Then, you can -->
-		<!-- use this to hide your username password from others. -->
-		<!-- Reference: -->
-		<!-- http://maven.apache.org/maven-release/maven-release-plugin/faq.html#credentials -->
-		<!-- <servers> -->
-		<!-- <server> -->
-		<!-- <id>github-shawn-yang-1979</id> -->
-		<!-- <username>shawn-yang-1979</username> -->
-		<!-- <password>p@$$w0rd</password> -->
-		<!-- </server> -->
-		<!-- </servers> -->
-
 	</properties>
 
 	<dependencies>
@@ -55,33 +43,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<!-- Have to use 2.5.3 otherwise you will get error message like: "can 
-					not find mvn.bat". -->
-				<version>2.5.3</version>
-				<configuration>
-					<tagNameFormat>v@{project.version}</tagNameFormat>
-				</configuration>
-			</plugin>
 		</plugins>
 		<finalName>${project.artifactId}</finalName>
 	</build>
 
-	<distributionManagement>
-		<repository>
-			<id>team-repository</id>
-			<url>file://D:\\Repository\\mvn-local-maven-center</url>
-		</repository>
-		<snapshotRepository>
-			<id>team-snapshot-repository</id>
-			<url>file://D:\\Repository\\mvn-local-maven-center-snapshot</url>
-		</snapshotRepository>
-	</distributionManagement>
-
-	<scm>
-		<developerConnection>scm:git:https://github.com/shawn-yang-1979/poc-maven.git</developerConnection>
-		<tag>HEAD</tag>
-	</scm>
 </project>
