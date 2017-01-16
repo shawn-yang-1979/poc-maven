@@ -20,6 +20,7 @@
 
 	<modules>
 		<module>../poc-maven-dummy-release</module>
+		<module>../poc-maven-dummy-assembly</module>
 	</modules>
 
 	<properties>
