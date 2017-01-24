@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.shawnyang.poc.maven</groupId>
@@ -33,7 +34,6 @@
 				<executions>
 					<execution>
 						<id>zip-scripts</id>
-						<phase>install</phase> <!-- bind to the install phase -->
 						<goals>
 							<goal>single</goal>
 						</goals>
@@ -51,17 +51,31 @@
 						<configuration>
 							<target>
 								<!-- Install some essential tools -->
-								<sshexec host="${server.host}" port="${server.port}" username="${server.user}" password="${server.password}" trust="true" failonerror="true" verbose="true" command="sudo apt-get update &amp;&amp; sudo apt-get install -y zip unzip" />
+								<sshexec host="${server.host}" port="${server.port}"
+									username="${server.user}" password="${server.password}" trust="true"
+									failonerror="false" verbose="true" command="sudo apt-get update" />
+								<sshexec host="${server.host}" port="${server.port}"
+									username="${server.user}" password="${server.password}" trust="true"
+									failonerror="true" verbose="true" command="sudo apt-get install -y zip unzip" />
 
 								<!-- Make directory if not exist -->
-								<sshexec host="${server.host}" port="${server.port}" username="${server.user}" password="${server.password}" trust="true" failonerror="true" verbose="true" command="mkdir -p ${server.deployDirectory}" />
+								<sshexec host="${server.host}" port="${server.port}"
+									username="${server.user}" password="${server.password}" trust="true"
+									failonerror="true" verbose="true" command="mkdir -p ${server.deployDirectory}" />
 
 								<!-- copy the zip scripts file to server -->
-								<scp file="${project.build.directory}/${project.build.finalName}-dist.zip" todir="${server.user}:${server.password}@${server.host}:${server.deployDirectory}" port="${server.port}" trust="true" verbose="true" failonerror="true">
+								<scp
+									file="${project.build.directory}/${project.build.finalName}-dist.zip"
+									todir="${server.user}:${server.password}@${server.host}:${server.deployDirectory}"
+									port="${server.port}" trust="true" verbose="true" failonerror="true">
 								</scp>
 
 								<!-- Delete old program, unzip new program -->
-								<sshexec host="${server.host}" port="${server.port}" username="${server.user}" password="${server.password}" trust="true" failonerror="true" verbose="true" command=" cd ${server.deployDirectory} &amp;&amp;             sudo rm -rf ${project.build.finalName} &amp;&amp;             mkdir ${project.build.finalName} &amp;&amp;             mv ${project.build.finalName}*.zip ${project.build.finalName} &amp;&amp;             cd ${project.build.finalName} &amp;&amp;             unzip ${project.build.finalName}*.zip" />
+								<sshexec host="${server.host}" port="${server.port}"
+									username="${server.user}" password="${server.password}" trust="true"
+									failonerror="true" verbose="true"
+									command="cd ${server.deployDirectory} &amp;&amp;
+									         sudo rm -rf ${project.build.finalName} &amp;&amp;             mkdir ${project.build.finalName} &amp;&amp;             mv ${project.build.finalName}*.zip ${project.build.finalName} &amp;&amp;             cd ${project.build.finalName} &amp;&amp;             unzip ${project.build.finalName}*.zip" />
 							</target>
 						</configuration>
 					</execution>
@@ -74,7 +88,10 @@
 						<configuration>
 							<target>
 								<!-- Run script -->
-								<sshexec host="${server.host}" port="${server.port}" username="${server.user}" password="${server.password}" trust="true" failonerror="true" verbose="true" command="${server.deployDirectory}/${project.build.finalName}/${script.run}" />
+								<sshexec host="${server.host}" port="${server.port}"
+									username="${server.user}" password="${server.password}" trust="true"
+									failonerror="true" verbose="true"
+									command="${server.deployDirectory}/${project.build.finalName}/${script.run}" />
 							</target>
 						</configuration>
 					</execution>
