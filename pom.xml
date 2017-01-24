@@ -59,9 +59,7 @@
 	</scm>
 
 	<modules>
-		<module>poc-maven-dummy-module-1</module>
-		<module>poc-maven-dummy-module-2</module>
-		<module>poc-maven-filtering</module>
-		<module>poc-maven-install-mongodb</module>
+
+	<module>poc-maven-spring-boot-filtering</module>
 	</modules>
 </project>
