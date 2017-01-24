@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.shawnyang.poc.maven</groupId>
 		<artifactId>poc-maven</artifactId>
-		<version>0.1.6</version>
+		<version>0.1.7-SNAPSHOT</version>
 	</parent>
 	<artifactId>poc-maven-assembly</artifactId>
 	<packaging>jar</packaging>
