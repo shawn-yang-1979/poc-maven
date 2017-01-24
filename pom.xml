@@ -4,7 +4,7 @@
 
 	<groupId>com.shawnyang.poc.maven</groupId>
 	<artifactId>poc-maven</artifactId>
-	<version>0.1.5</version>
+	<version>0.1.6-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>poc-maven</name>
@@ -54,7 +54,7 @@
 
 	<scm>
 		<developerConnection>scm:git:https://github.com/shawn-yang-1979/poc-maven.git</developerConnection>
-		<tag>v0.1.5</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<modules>
