@@ -1,0 +1,4 @@
+/1-upload.bat
+/2-reinstall-mongodb.bat
+/3-reinstall-mosquitto.bat
+/4-reinstall-oracle-java7.bat

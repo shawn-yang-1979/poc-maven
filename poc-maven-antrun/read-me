@@ -1,0 +1,15 @@
+maven antrun plugin can be used to run ssh and scp command.
+Using it, you can do 1 click remote server configuration or deployment.
+
+However, here are some issue I found.
+1. When there are "$" characters in your password, you will not pass the ssh authentication.
+2. Running command via sudo, you will probably get this error message "sudo: no tty present and no askpass program specified".
+   To fix it, you need to change sudo configuration on your remote server. Here is the reference link:
+   http://stackoverflow.com/questions/21659637/how-to-fix-sudo-no-tty-present-and-no-askpass-program-specified-error
+   $ sudo visudo
+   It will open a edit screen.
+   Add this at the LAST LINE. Again, it have to be at the LAST LINE.
+   shawn ALL=(ALL) NOPASSWD: ALL
+   Press Ctrl+O to save the file
+   Press Ctrl+X to exit.
+   Then, try ssh command again.
