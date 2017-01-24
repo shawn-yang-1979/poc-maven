@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>poc-maven-spring-boot-filtering</artifactId>
+	<packaging>jar</packaging>
+
+	<name>poc-maven-spring-boot-filtering</name>
+	<description>Introduce resources filtering</description>
+
+	<parent>
+		<groupId>com.shawnyang.poc.maven</groupId>
+		<artifactId>poc-maven</artifactId>
+		<version>0.1.5-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.7</java.version>
+		<!-- Notes: -->
+		<!-- You can define customized properties here or using -Dapp.home=D:\Program -->
+		<!-- in command line -->
+		<!-- The properties can be used as variables in resource filtering or pom -->
+		<!-- files. -->
+		<app.home>D:\Program</app.home>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<!-- Notes: -->
+		<!-- The parent pom spring-boot-starter-parent has declared -->
+		<!-- the resource filtering for **/application*.yml and **/application*.properties -->
+		<!-- in src/main/resources folder -->
+		<!-- If you want to filter some other files, you can put those files in -->
+		<!-- another folder, said, resources-filtered and make the filtering configuration -->
+		<!-- as bellow: -->
+		<resources>
+			<resource>
+				<directory>${basedir}/src/main/resources-filtered</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<!-- Notes: -->
+				<!-- The parent pom spring-boot-starter-parent declared the goal repackage -->
+				<!-- The goal binds to maven lifecycle: package. -->
+				<!-- So, when maven lifecycle is at pagkage phase, -->
+				<!-- the goal repackage will execute. -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!-- Notes: -->
+			<!-- This is to filter and copy the resource file not going to pack in -->
+			<!-- jar. -->
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-resources-external</id>
+						<!-- Notes: -->
+						<!-- The goal copy-resources will be executed after install phase -->
+						<phase>install</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target</outputDirectory>
+							<resources>
+								<resource>
+									<directory>src/main/resources-external</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<finalName>${project.artifactId}</finalName>
+	</build>
+</project>
