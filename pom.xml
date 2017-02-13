@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.shawnyang.poc.maven</groupId>
@@ -21,8 +22,15 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.7</java.version>
-		<project.scm.id>github-shawn-yang-1979</project.scm.id>
+		<project.scm.id>github</project.scm.id>
 	</properties>
+
+	<repositories>
+		<repository>
+			<id>team-public-repository</id>
+			<url>http://192.168.100.101:18081/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
 
 	<build>
 		<plugins>
@@ -43,12 +51,12 @@
 
 	<distributionManagement>
 		<repository>
-			<id>team-repository</id>
-			<url>file://D:\\Repository\\mvn-local-maven-center</url>
+			<id>sonatype-nexus-release</id>
+			<url>http://192.168.100.101:18081/nexus/content/repositories/releases/</url>
 		</repository>
 		<snapshotRepository>
-			<id>team-snapshot-repository</id>
-			<url>file://D:\\Repository\\mvn-local-maven-center-snapshot</url>
+			<id>sonatype-nexus-snapshot</id>
+			<url>http://192.168.100.101:18081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
