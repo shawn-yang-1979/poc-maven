@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.shawnyang.poc.maven</groupId>
 		<artifactId>poc-maven</artifactId>
-		<version>0.1.10-SNAPSHOT</version>
+		<version>0.1.10</version>
 	</parent>
 	<artifactId>poc-maven-antrun</artifactId>
 	<packaging>pom</packaging>
@@ -61,7 +61,7 @@
 								</scp>
 
 								<!-- Delete old program, unzip new program -->
-								<sshexec host="${server.host}" port="${server.port}" username="${server.user}" password="${server.password}" trust="true" failonerror="true" verbose="true" command="cd ${server.deployDirectory} &amp;&amp; sudo rm -rf ${project.build.finalName} &amp;&amp; mkdir ${project.build.finalName} &amp;&amp; mv ${project.build.finalName}*.zip ${project.build.finalName} &amp;&amp;             cd ${project.build.finalName} &amp;&amp;             unzip ${project.build.finalName}*.zip" />
+								<sshexec host="${server.host}" port="${server.port}" username="${server.user}" password="${server.password}" trust="true" failonerror="true" verbose="true" command="cd ${server.deployDirectory} &amp;&amp; sudo rm -rf ${project.build.finalName} &amp;&amp; mkdir ${project.build.finalName} &amp;&amp; mv ${project.build.finalName}*.zip ${project.build.finalName} &amp;&amp; cd ${project.build.finalName} &amp;&amp;             unzip ${project.build.finalName}*.zip" />
 							</target>
 						</configuration>
 					</execution>
