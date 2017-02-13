@@ -4,7 +4,7 @@
 
 	<groupId>com.shawnyang.poc.maven</groupId>
 	<artifactId>poc-maven</artifactId>
-	<version>0.1.13-SNAPSHOT</version>
+	<version>0.1.14-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>poc-maven</name>
